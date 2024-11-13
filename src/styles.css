@@ -1,94 +1,162 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  @font-face {
-      font-family: 'Helvetica';
-      src: url('../assets/fonts/HelveticaNowDisplay-Light.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../assets/fonts/HelveticaNowDisplay-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top */
+  align-items: center; /* Center horizontally */
+  min-height: 100vh; /* Ensure the body takes at least full viewport height */
+  padding: 40px 0; /* Add padding to the top and bottom to prevent content from sticking to the edges */
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.links a {
+  margin-left: 15px;
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.bio p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.bio a {
+  color: #1a73e8;
+  text-decoration: none;
+  border-bottom: 1px dotted #1a73e8;
+}
+
+.bio a:hover {
+  text-decoration: underline;
+}
+
+.work h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.work ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.work li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Adjust as needed */
+  gap: 60px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.work .company {
+  font-weight: bold;
+  color: #333;
+}
+
+.work .role,
+.work .city,
+.work .year {
+  color: #888;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
   body {
-      font-family: 'Helvetica', sans-serif;
-      color: #333;
-      background-color: #f5f5f5;
-      display: flex;
-      justify-content: center;
+    padding: 10px 0; /* Reduce padding for mobile */
   }
-  
-  .container {
-    max-width: 700px;
-    margin: 50px auto;
-  }
-  
+
   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
   }
-  
+
   header h1 {
-    font-size: 2em;
-    font-weight: 700;
-    color: #1a1a1a;
-  }
-  
-  .links a {
-    margin-left: 15px;
-    color: #555;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .links a:hover {
-    text-decoration: underline;
-  }
-  
-  .bio p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-  }
-  
-  .bio a {
-    color: #1a73e8;
-    text-decoration: none;
-    border-bottom: 1px dotted #1a73e8;
-  }
-  
-  .bio a:hover {
-    text-decoration: underline;
-  }
-  
-  .work h2 {
-    font-size: 1.5em;
-    font-weight: 600;
+    font-size: 1.8em;
     margin-bottom: 10px;
-    color: #333;
   }
-  
-  .work ul {
-    list-style: none;
-    padding-left: 0;
+
+  .links a {
+    margin-left: 0;
+    margin-top: 10px;
   }
-  
+
+  .container {
+    padding: 10px;
+    max-width: 90%; /* Take up more space on small screens */
+  }
+
   .work li {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* Adjust as needed */
-    gap: 60px;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    grid-template-columns: 1fr 1fr; /* 2 columns for smaller screens */
+    gap: 20px;
   }
-  
-  .work .company {
-    font-weight: bold;
-    color: #333;
+
+  .work h2 {
+    font-size: 1.3em;
   }
-  
-  .work .role, .work .city, .work .year {
-    color: #888;
+}
+
+@media (max-width: 480px) {
+  .work li {
+    grid-template-columns: 1fr; /* Stack the items on very small screens */
+    gap: 10px;
   }
-  
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  .links a {
+    margin-top: 5px;
+  }
+
+  .bio p {
+    font-size: 1em;
+  }
+
+  .work h2 {
+    font-size: 1.2em;
+  }
+}
